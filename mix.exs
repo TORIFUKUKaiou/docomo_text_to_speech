@@ -6,8 +6,12 @@ defmodule DocomoTextToSpeech.MixProject do
       app: :docomo_text_to_speech,
       version: "0.1.0",
       elixir: "~> 1.9",
+      build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      description: description(),
+      package: package(),
+      deps: deps(),
+      source_url: "https://github.com/TORIFUKUKaiou/docomo_text_to_speech"
     ]
   end
 
@@ -23,6 +27,25 @@ defmodule DocomoTextToSpeech.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:httpoison, "~> 1.6"},
+      {:poison, "~> 4.0"},
+      {:ex_doc, "~> 0.21.2", only: :dev, runtime: false},
+      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
+      {:exvcr, "~> 0.10", only: :test}
+    ]
+  end
+
+  defp description() do
+    "A docomo Developer support textToSpeech API client for Elixir"
+  end
+
+  defp package() do
+    [
+      maintainers: [
+        "TORIFUKUKaiou"
+      ],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/TORIFUKUKaiou/docomo_text_to_speech"}
     ]
   end
 end

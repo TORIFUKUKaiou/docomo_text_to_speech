@@ -1,9 +1,6 @@
-defmodule DocomoTextToSpeechTest do
-  use ExUnit.Case
+defmodule DocomoTextToSpeech.ApiTest do
   use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
-  doctest DocomoTextToSpeech, except: [run: 7, run!: 7]
-  doctest DocomoTextToSpeech.Parser
 
   @text "I Was Born To Love Elixir"
 
@@ -11,15 +8,15 @@ defmodule DocomoTextToSpeechTest do
     HTTPoison.start()
   end
 
-  test "run" do
+  test "post" do
     use_cassette "httpoison_post" do
-      {:ok, body} = DocomoTextToSpeech.run(@text)
+      {:ok, body, %{"Content-Type" => "audio/wav"}} = DocomoTextToSpeech.Api.post(@text)
       assert body
     end
 
     use_cassette "httpoison_post_error" do
       {:error, body, %{"Content-Type" => "application/json"}, status_code} =
-        DocomoTextToSpeech.run(@text)
+        DocomoTextToSpeech.Api.post(@text)
 
       assert body
       assert status_code
