@@ -23,3 +23,5 @@ erl_crash.dump
 docomo_text_to_speech-*.tar
 
 *.wav
+
+.tool-versions
