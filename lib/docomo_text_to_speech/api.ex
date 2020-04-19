@@ -25,7 +25,7 @@ defmodule DocomoTextToSpeech.Api do
         VoiceType: voice_type,
         AudioFileFormat: audio_file_format
       }
-      |> Poison.encode!()
+      |> Jason.encode!()
 
     "#{@base_url}#{api_key()}"
     |> HTTPoison.post(json_data, headers())
