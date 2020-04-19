@@ -4,7 +4,7 @@ defmodule DocomoTextToSpeech.MixProject do
   def project do
     [
       app: :docomo_text_to_speech,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.9",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -28,7 +28,7 @@ defmodule DocomoTextToSpeech.MixProject do
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:httpoison, "~> 1.6"},
-      {:poison, "~> 4.0"},
+      {:jason, "~> 1.2"},
       {:ex_doc, "~> 0.21.2", only: :dev, runtime: false},
       {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
       {:exvcr, "~> 0.10", only: :test}
