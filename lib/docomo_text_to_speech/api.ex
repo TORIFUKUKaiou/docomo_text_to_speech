@@ -1,7 +1,7 @@
 defmodule DocomoTextToSpeech.Api do
   @moduledoc false
 
-  @base_url "https://api.apigw.smt.docomo.ne.jp/crayon/v1/textToSpeech?APIKEY="
+  @base_url "https://api.apigw.smt.docomo.ne.jp/futureVoiceCrayon/v1/textToSpeech?APIKEY="
 
   alias DocomoTextToSpeech.Parser
 
