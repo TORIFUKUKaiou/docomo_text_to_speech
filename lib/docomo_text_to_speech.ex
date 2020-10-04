@@ -1,12 +1,8 @@
 defmodule DocomoTextToSpeech do
-  @moduledoc """
-  DocomoTextToSpeech is an Elixir SDK to talk with docomo Developer support textToSpeech API.
-
-  For more details on API, refer to https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=text_to_speech&p_name=api_7#tag01
-
-  ## Usage
-      DocomoTextToSpeech.run!("エリクサー") |> (&File.write("output.wav", &1)).()
-  """
+  @moduledoc "README.md"
+             |> File.read!()
+             |> String.split("<!-- MDOC !-->")
+             |> Enum.fetch!(1)
 
   @doc """
   Converts text to speech
@@ -18,6 +14,7 @@ defmodule DocomoTextToSpeech do
        <<82, 73, 70, 70, 28, 199, 0, 0, 87, 65, 86, 69, 102, 109, 116, 32, 18, 0, 0,
        0, 1, 0, 1, 0, 34, 86, 0, 0, 68, 172, 0, 0, 2, 0, 16, 0, 0, 0, 100, 97, 116,
        97, 246, 198, 0, 0, 0, 0, ...>>}
+
   """
   def run(
         text,
@@ -49,6 +46,7 @@ defmodule DocomoTextToSpeech do
       <<82, 73, 70, 70, 28, 199, 0, 0, 87, 65, 86, 69, 102, 109, 116, 32, 18, 0, 0,
         0, 1, 0, 1, 0, 34, 86, 0, 0, 68, 172, 0, 0, 2, 0, 16, 0, 0, 0, 100, 97, 116,
         97, 246, 198, 0, 0, 0, 0, ...>>
+
   """
   def run!(
         text,
