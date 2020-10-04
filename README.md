@@ -1,45 +1,43 @@
 # DocomoTextToSpeech
 
-> A docomo Developer support textToSpeech API client for Elixir
+<!-- MDOC !-->
+
+Elixir client for NTT Docomo TextToSpeech API.
 
 ## Installation
 
-The package can be installed as:
-
-Add `docomo_text_to_speech` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `docomo_text_to_speech` to your list of
+dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:docomo_text_to_speech, "~> 0.1.0"}
+    {:docomo_text_to_speech, "~> 0.2.0"}
   ]
 end
 ```
 
-## Usage
+## Configuration
 
-You will need to configure the docomo Developer support textToSpeech api key properly.
+Get your API key from [docomo Developer support](https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=text_to_speech&p_name=api_7#tag01) site.
 
-### configuration
-
-The simplest would be to set darksky api key as below:
+Set the API key to your system environment variable.
 
 ```
 export DOCOMO_TEXT_TO_SPEECH_API_KEY="secret"
 ```
 
-Now, in your config.exs (or environment specific configuration), add the config block to configure DocomoTextToSpeech.
+In your `config.exs`, set the `api_key` from the system environment variable.
 
 ```elixir
 config :docomo_text_to_speech,
   api_key: System.get_env("DOCOMO_TEXT_TO_SPEECH_API_KEY")
 ```
 
-### Examples
+## Usage
 
 ```elixir
-export DOCOMO_TEXT_TO_SPEECH_API_KEY="secret"
-DocomoTextToSpeech.run!("エリクサー") |> (&File.write("output.wav", &1)).()
+iex> DocomoTextToSpeech.run!("エリクサー") |> (&File.write("output.wav", &1)).()
 ```
 
 ## License

@@ -1,9 +1,13 @@
 defmodule DocomoTextToSpeech.MixProject do
   use Mix.Project
 
+  @name "DocomoTextToSpeech"
+  @source_url "https://github.com/TORIFUKUKaiou/docomo_text_to_speech"
+
   def project do
     [
       app: :docomo_text_to_speech,
+      name: @name,
       version: "0.2.0",
       elixir: "~> 1.9",
       build_embedded: Mix.env() == :prod,
@@ -11,22 +15,18 @@ defmodule DocomoTextToSpeech.MixProject do
       description: description(),
       package: package(),
       deps: deps(),
-      source_url: "https://github.com/TORIFUKUKaiou/docomo_text_to_speech"
+      docs: docs()
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
       extra_applications: [:logger]
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:httpoison, "~> 1.6"},
       {:jason, "~> 1.2"},
       {:ex_doc, "~> 0.21.2", only: :dev, runtime: false},
@@ -35,17 +35,24 @@ defmodule DocomoTextToSpeech.MixProject do
     ]
   end
 
-  defp description() do
-    "A docomo Developer support textToSpeech API client for Elixir"
+  defp description do
+    "Elixir client for NTT Docomo TextToSpeech API"
   end
 
-  defp package() do
+  defp package do
     [
       maintainers: [
         "TORIFUKUKaiou"
       ],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/TORIFUKUKaiou/docomo_text_to_speech"}
+      links: %{"GitHub" => @source_url}
+    ]
+  end
+
+  defp docs do
+    [
+      main: @name,
+      source_url: @source_url,
     ]
   end
 end
