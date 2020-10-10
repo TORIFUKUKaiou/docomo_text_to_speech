@@ -1,0 +1,34 @@
+[
+  {
+    "request": {
+      "body": "{\"AudioFileFormat\":2,\"Command\":\"AP_Synth\",\"PowerRate\":1.0,\"SpeakerID\":1,\"SpeechRate\":1.0,\"StyleID\":1,\"TextData\":\"I Was Born To Love Elixir\",\"VoiceType\":1.0}",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.apigw.smt.docomo.ne.jp/futureVoiceCrayon/v1/textToSpeech?APIKEY=<REDACTED>"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"requestError\":{\"policyException\":{\"messageId\":\"POLSLA009\",\"text\":\"Unable to perform ApiKey based Authentication\"}}}",
+      "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "117",
+        "Connection": "keep-alive",
+        "Date": "Mon, 12 Oct 2020 12:36:35 GMT",
+        "x-amzn-RequestId": "d4c81f25-0835-413f-bd23-bdef2b5a41b8",
+        "Access-Control-Allow-Origin": "*",
+        "x-amz-apigw-id": "UTEZAGRRNjMFd2w=",
+        "X-Amzn-Trace-Id": "Root=1-5f844dd3-0a94e8fd5cfff8590f84018b;Sampled=0",
+        "X-Cache": "Error from cloudfront",
+        "Via": "1.1 c2e4ac979e01c116ae8349b7d6d1489a.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "SIN52-C3",
+        "X-Amz-Cf-Id": "LFaV5rncKlIjVVUv0FqIXJNu2fFy3SdGRl3GF-Aa_-xyjT2I4dZ9kw=="
+      },
+      "status_code": 401,
+      "type": "ok"
+    }
+  }
+]
