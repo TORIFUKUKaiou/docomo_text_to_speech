@@ -31,7 +31,7 @@ In your `config.exs`, set the `api_key` from the system environment variable.
 
 ```elixir
 config :docomo_text_to_speech,
-  api_key: System.get_env("DOCOMO_TEXT_TO_SPEECH_API_KEY")
+  api_key: "secret"
 ```
 
 ## Usage

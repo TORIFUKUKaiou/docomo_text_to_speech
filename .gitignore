@@ -24,4 +24,5 @@ docomo_text_to_speech-*.tar
 
 *.wav
 
+# asdf versioning
 .tool-versions
