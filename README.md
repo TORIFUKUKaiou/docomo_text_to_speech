@@ -12,7 +12,7 @@ dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:docomo_text_to_speech, "~> 0.2.1"}
+    {:docomo_text_to_speech, "~> 0.3.0"}
   ]
 end
 ```
