@@ -8,7 +8,7 @@ defmodule DocomoTextToSpeech.MixProject do
     [
       app: :docomo_text_to_speech,
       name: @name,
-      version: "0.2.1",
+      version: "0.3.0",
       elixir: "~> 1.8",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
